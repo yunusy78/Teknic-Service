@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8f48eb0b31e345bf8f97fd8d47c46966" Name="Diagram1">
+        <EntityTypeShape EntityType="DbTeknicServiceModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.Categories" Width="1.5" PointX="1.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.Customers" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.Departments" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.Employees" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.Expense" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.FaultDetail" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.Invoice" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.Notifications" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.OrderDetails" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.ProductMovement" Width="1.5" PointX="6" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.Products" Width="1.5" PointX="3.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.TeknicService" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbTeknicServiceModel.Tracking" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_Invoice_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_ProductMovement_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_TeknicService_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_Invoice_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_ProductMovement_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_TeknicService_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_FaultDetail_TeknicService" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_OrderDetails_Invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_ProductMovement_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_TeknicService_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="DbTeknicServiceModel.FK_Tracking_TeknicService" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

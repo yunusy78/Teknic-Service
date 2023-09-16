@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbTeknicServiceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="30" />
+    <Property Name="ContactTitle" Type="nvarchar" MaxLength="30" />
+    <Property Name="Address" Type="nvarchar" MaxLength="60" />
+    <Property Name="City" Type="nvarchar" MaxLength="15" />
+    <Property Name="Region" Type="nvarchar" MaxLength="15" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Country" Type="nvarchar" MaxLength="15" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="24" />
+    <Property Name="Bank" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="30" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="25" />
+    <Property Name="PhotoPath" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Expense">
+    <Key>
+      <PropertyRef Name="ExpenseID" />
+    </Key>
+    <Property Name="ExpenseID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ExpenseDate" Type="date" Nullable="false" />
+    <Property Name="ExpenseCategory" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
+    <Property Name="Payee" Type="varchar" MaxLength="100" />
+    <Property Name="ReceiptNumber" Type="varchar" MaxLength="20" />
+    <Property Name="Notes" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="FaultDetail">
+    <Key>
+      <PropertyRef Name="FaultDetailID" />
+    </Key>
+    <Property Name="FaultDetailID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProcessID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Fault" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Detail" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ListPrice" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="NetPrice" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InvoiceDate" Type="date" Nullable="false" />
+    <Property Name="DueDate" Type="date" Nullable="false" />
+    <Property Name="DueTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IsPaid" Type="bit" Nullable="false" />
+    <Property Name="SerialNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SequenceNumber" Type="int" Nullable="false" />
+    <Property Name="TaxOffice" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Content" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InvoiceID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Quantity" Type="smallint" Nullable="false" />
+    <Property Name="UnitPrice" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductMovement">
+    <Key>
+      <PropertyRef Name="MovementID" />
+    </Key>
+    <Property Name="MovementID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MovementType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MovementDate" Type="datetime" />
+    <Property Name="Quantity" Type="smallint" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="CategoryID" Type="uniqueidentifier" />
+    <Property Name="PurchasePrice" Type="money" />
+    <Property Name="UnitPrice" Type="money" />
+    <Property Name="UnitsInStock" Type="smallint" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeknicService">
+    <Key>
+      <PropertyRef Name="ProcessID" />
+    </Key>
+    <Property Name="ProcessID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TheArrivalDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="TheReleaseDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tracking">
+    <Key>
+      <PropertyRef Name="TrackingID" />
+    </Key>
+    <Property Name="TrackingID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProcessID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_FaultDetail_TeknicService">
+    <End Role="TeknicService" Type="Self.TeknicService" Multiplicity="1" />
+    <End Role="FaultDetail" Type="Self.FaultDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TeknicService">
+        <PropertyRef Name="ProcessID" />
+      </Principal>
+      <Dependent Role="FaultDetail">
+        <PropertyRef Name="ProcessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Customer">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Employee">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Invoice">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMovement_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="ProductMovement" Type="Self.ProductMovement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="ProductMovement">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMovement_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="ProductMovement" Type="Self.ProductMovement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="ProductMovement">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMovement_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ProductMovement" Type="Self.ProductMovement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductMovement">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeknicService_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="TeknicService" Type="Self.TeknicService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="TeknicService">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeknicService_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="TeknicService" Type="Self.TeknicService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="TeknicService">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeknicService_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="TeknicService" Type="Self.TeknicService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="TeknicService">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tracking_TeknicService">
+    <End Role="TeknicService" Type="Self.TeknicService" Multiplicity="1" />
+    <End Role="Tracking" Type="Self.Tracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TeknicService">
+        <PropertyRef Name="ProcessID" />
+      </Principal>
+      <Dependent Role="Tracking">
+        <PropertyRef Name="ProcessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbTeknicServiceModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expense" EntityType="Self.Expense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaultDetail" EntityType="Self.FaultDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductMovement" EntityType="Self.ProductMovement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TeknicService" EntityType="Self.TeknicService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tracking" EntityType="Self.Tracking" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_FaultDetail_TeknicService" Association="Self.FK_FaultDetail_TeknicService">
+      <End Role="TeknicService" EntitySet="TeknicService" />
+      <End Role="FaultDetail" EntitySet="FaultDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Customer" Association="Self.FK_Invoice_Customer">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Employee" Association="Self.FK_Invoice_Employee">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Invoice" Association="Self.FK_OrderDetails_Invoice">
+      <End Role="Invoice" EntitySet="Invoice" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Products" Association="Self.FK_OrderDetails_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMovement_Customers" Association="Self.FK_ProductMovement_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="ProductMovement" EntitySet="ProductMovement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMovement_Employees" Association="Self.FK_ProductMovement_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="ProductMovement" EntitySet="ProductMovement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMovement_Products" Association="Self.FK_ProductMovement_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductMovement" EntitySet="ProductMovement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Categories" Association="Self.FK_Products_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeknicService_Customers" Association="Self.FK_TeknicService_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="TeknicService" EntitySet="TeknicService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeknicService_Employees" Association="Self.FK_TeknicService_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="TeknicService" EntitySet="TeknicService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeknicService_Products" Association="Self.FK_TeknicService_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="TeknicService" EntitySet="TeknicService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tracking_TeknicService" Association="Self.FK_Tracking_TeknicService">
+      <End Role="TeknicService" EntitySet="TeknicService" />
+      <End Role="Tracking" EntitySet="Tracking" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

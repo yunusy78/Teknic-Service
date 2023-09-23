@@ -38,7 +38,7 @@
             this.btnNewProductRec = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.btnProductChart = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBrandChart = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
@@ -114,7 +114,7 @@
             this.btnNewProductRec,
             this.barButtonItem6,
             this.btnProductChart,
-            this.barButtonItem8,
+            this.btnBrandChart,
             this.barButtonItem9,
             this.barButtonItem10,
             this.barButtonItem11,
@@ -217,18 +217,19 @@
             // 
             this.btnProductChart.Caption = "Product Chart";
             this.btnProductChart.Id = 7;
-            this.btnProductChart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.btnProductChart.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.btnProductChart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProductChart.ImageOptions.Image")));
+            this.btnProductChart.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProductChart.ImageOptions.LargeImage")));
             this.btnProductChart.Name = "btnProductChart";
             this.btnProductChart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProductChart_ItemClick);
             // 
-            // barButtonItem8
+            // btnBrandChart
             // 
-            this.barButtonItem8.Caption = "Brand Chart";
-            this.barButtonItem8.Id = 8;
-            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.btnBrandChart.Caption = " Brand Chart";
+            this.btnBrandChart.Id = 8;
+            this.btnBrandChart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBrandChart.ImageOptions.Image")));
+            this.btnBrandChart.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBrandChart.ImageOptions.LargeImage")));
+            this.btnBrandChart.Name = "btnBrandChart";
+            this.btnBrandChart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBrandChart_ItemClick);
             // 
             // barButtonItem9
             // 
@@ -285,6 +286,7 @@
             this.barButtonItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
             this.barButtonItem14.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
             this.barButtonItem14.Name = "barButtonItem14";
+            this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
             // 
             // barButtonItem15
             // 
@@ -528,7 +530,7 @@
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.btnProductChart);
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnBrandChart);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "ribbonPageGroup10";
             // 
@@ -734,7 +736,7 @@
         private DevExpress.XtraBars.BarButtonItem btnNewProductRec;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem btnProductChart;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem btnBrandChart;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;

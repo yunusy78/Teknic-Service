@@ -51,6 +51,8 @@ namespace TeknicService.Forms
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtProductBrand = new System.Windows.Forms.TextBox();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -81,6 +83,8 @@ namespace TeknicService.Forms
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.txtProductBrand);
+            this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.textProductId);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.btnList);
@@ -107,7 +111,7 @@ namespace TeknicService.Forms
             // textProductId
             // 
             this.textProductId.Enabled = false;
-            this.textProductId.Location = new System.Drawing.Point(191, 89);
+            this.textProductId.Location = new System.Drawing.Point(175, 98);
             this.textProductId.Name = "textProductId";
             this.textProductId.Size = new System.Drawing.Size(308, 27);
             this.textProductId.TabIndex = 20;
@@ -115,7 +119,7 @@ namespace TeknicService.Forms
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(48, 100);
+            this.labelControl7.Location = new System.Drawing.Point(32, 109);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(69, 19);
             this.labelControl7.TabIndex = 19;
@@ -125,7 +129,7 @@ namespace TeknicService.Forms
             // btnList
             // 
             this.btnList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnList.ImageOptions.Image")));
-            this.btnList.Location = new System.Drawing.Point(347, 561);
+            this.btnList.Location = new System.Drawing.Point(333, 620);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(152, 65);
             this.btnList.TabIndex = 18;
@@ -135,7 +139,7 @@ namespace TeknicService.Forms
             // btnDelete
             // 
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(191, 561);
+            this.btnDelete.Location = new System.Drawing.Point(177, 620);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(147, 65);
             this.btnDelete.TabIndex = 17;
@@ -145,7 +149,7 @@ namespace TeknicService.Forms
             // btnUpdate
             // 
             this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(347, 466);
+            this.btnUpdate.Location = new System.Drawing.Point(333, 525);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(152, 65);
             this.btnUpdate.TabIndex = 16;
@@ -155,7 +159,7 @@ namespace TeknicService.Forms
             // btnSvae
             // 
             this.btnSvae.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSvae.ImageOptions.Image")));
-            this.btnSvae.Location = new System.Drawing.Point(191, 466);
+            this.btnSvae.Location = new System.Drawing.Point(177, 525);
             this.btnSvae.Name = "btnSvae";
             this.btnSvae.Size = new System.Drawing.Size(147, 65);
             this.btnSvae.TabIndex = 15;
@@ -164,7 +168,7 @@ namespace TeknicService.Forms
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(50, 419);
+            this.labelControl6.Location = new System.Drawing.Point(36, 478);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(63, 19);
             this.labelControl6.TabIndex = 14;
@@ -173,7 +177,7 @@ namespace TeknicService.Forms
             // 
             // lookUpEdit1
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(193, 412);
+            this.lookUpEdit1.Location = new System.Drawing.Point(179, 471);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -184,14 +188,14 @@ namespace TeknicService.Forms
             // 
             // txtUnitInStock
             // 
-            this.txtUnitInStock.Location = new System.Drawing.Point(193, 343);
+            this.txtUnitInStock.Location = new System.Drawing.Point(179, 402);
             this.txtUnitInStock.Name = "txtUnitInStock";
             this.txtUnitInStock.Size = new System.Drawing.Size(306, 27);
             this.txtUnitInStock.TabIndex = 12;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(50, 351);
+            this.labelControl4.Location = new System.Drawing.Point(36, 410);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(90, 19);
             this.labelControl4.TabIndex = 11;
@@ -199,14 +203,14 @@ namespace TeknicService.Forms
             // 
             // txtUnitPrice
             // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(193, 282);
+            this.txtUnitPrice.Location = new System.Drawing.Point(179, 341);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(306, 27);
             this.txtUnitPrice.TabIndex = 10;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(53, 290);
+            this.labelControl5.Location = new System.Drawing.Point(39, 349);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(63, 19);
             this.labelControl5.TabIndex = 9;
@@ -214,14 +218,14 @@ namespace TeknicService.Forms
             // 
             // txtPurchasePrice
             // 
-            this.txtPurchasePrice.Location = new System.Drawing.Point(193, 223);
+            this.txtPurchasePrice.Location = new System.Drawing.Point(179, 282);
             this.txtPurchasePrice.Name = "txtPurchasePrice";
             this.txtPurchasePrice.Size = new System.Drawing.Size(306, 27);
             this.txtPurchasePrice.TabIndex = 8;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(53, 231);
+            this.labelControl3.Location = new System.Drawing.Point(39, 290);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(97, 19);
             this.labelControl3.TabIndex = 7;
@@ -230,14 +234,14 @@ namespace TeknicService.Forms
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(50, 223);
+            this.labelControl2.Location = new System.Drawing.Point(36, 282);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(0, 19);
             this.labelControl2.TabIndex = 5;
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(193, 158);
+            this.txtProductName.Location = new System.Drawing.Point(177, 167);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(308, 27);
             this.txtProductName.TabIndex = 4;
@@ -245,11 +249,26 @@ namespace TeknicService.Forms
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(50, 169);
+            this.labelControl1.Location = new System.Drawing.Point(34, 178);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(100, 19);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Product Name";
+            // 
+            // txtProductBrand
+            // 
+            this.txtProductBrand.Location = new System.Drawing.Point(175, 224);
+            this.txtProductBrand.Name = "txtProductBrand";
+            this.txtProductBrand.Size = new System.Drawing.Size(308, 27);
+            this.txtProductBrand.TabIndex = 22;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(32, 235);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(100, 19);
+            this.labelControl8.TabIndex = 21;
+            this.labelControl8.Text = "Product Brand";
             // 
             // ProductList
             // 
@@ -295,5 +314,7 @@ namespace TeknicService.Forms
         private System.Windows.Forms.TextBox textProductId;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private ViewFocusEventHandler gridControl1_FocusedViewChanged;
+        private System.Windows.Forms.TextBox txtProductBrand;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }

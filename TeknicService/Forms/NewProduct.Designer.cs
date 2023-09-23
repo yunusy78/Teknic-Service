@@ -48,6 +48,9 @@
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.btnSave1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtProductBrand = new DevExpress.XtraEditors.TextEdit();
+            this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductName2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCategory.Properties)).BeginInit();
@@ -60,6 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProductBrand.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureEdit2
@@ -103,7 +108,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(97, 225);
+            this.panel2.Location = new System.Drawing.Point(97, 305);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 3);
             this.panel2.TabIndex = 6;
@@ -111,7 +116,7 @@
             // txtCategory
             // 
             this.txtCategory.EditValue = "Category";
-            this.txtCategory.Location = new System.Drawing.Point(97, 190);
+            this.txtCategory.Location = new System.Drawing.Point(97, 270);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.txtCategory.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,7 +131,7 @@
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(24, 183);
+            this.pictureEdit1.Location = new System.Drawing.Point(24, 263);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
@@ -138,7 +143,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(97, 294);
+            this.panel3.Location = new System.Drawing.Point(97, 374);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 3);
             this.panel3.TabIndex = 9;
@@ -146,7 +151,7 @@
             // textPurchasePrice
             // 
             this.textPurchasePrice.EditValue = "PurchasePrice";
-            this.textPurchasePrice.Location = new System.Drawing.Point(97, 250);
+            this.textPurchasePrice.Location = new System.Drawing.Point(97, 330);
             this.textPurchasePrice.Name = "textPurchasePrice";
             this.textPurchasePrice.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.textPurchasePrice.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,7 +166,7 @@
             // pictureEdit3
             // 
             this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
-            this.pictureEdit3.Location = new System.Drawing.Point(24, 252);
+            this.pictureEdit3.Location = new System.Drawing.Point(24, 332);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
@@ -174,7 +179,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(97, 360);
+            this.panel4.Location = new System.Drawing.Point(97, 440);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 3);
             this.panel4.TabIndex = 12;
@@ -182,7 +187,7 @@
             // txtUnitPrice
             // 
             this.txtUnitPrice.EditValue = "UnitPrice";
-            this.txtUnitPrice.Location = new System.Drawing.Point(97, 316);
+            this.txtUnitPrice.Location = new System.Drawing.Point(97, 396);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.txtUnitPrice.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,7 +202,7 @@
             // pictureEdit4
             // 
             this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(24, 318);
+            this.pictureEdit4.Location = new System.Drawing.Point(24, 398);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
@@ -209,7 +214,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Location = new System.Drawing.Point(97, 439);
+            this.panel5.Location = new System.Drawing.Point(97, 519);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(300, 3);
             this.panel5.TabIndex = 15;
@@ -217,7 +222,7 @@
             // txtStock
             // 
             this.txtStock.EditValue = "UnitsInStock";
-            this.txtStock.Location = new System.Drawing.Point(97, 395);
+            this.txtStock.Location = new System.Drawing.Point(97, 475);
             this.txtStock.Name = "txtStock";
             this.txtStock.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.txtStock.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -232,7 +237,7 @@
             // pictureEdit5
             // 
             this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
-            this.pictureEdit5.Location = new System.Drawing.Point(25, 397);
+            this.pictureEdit5.Location = new System.Drawing.Point(25, 477);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit5.Properties.Appearance.Options.UseBackColor = true;
@@ -269,7 +274,7 @@
             // btnSave1
             // 
             this.btnSave1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave1.ImageOptions.Image")));
-            this.btnSave1.Location = new System.Drawing.Point(24, 473);
+            this.btnSave1.Location = new System.Drawing.Point(25, 557);
             this.btnSave1.Name = "btnSave1";
             this.btnSave1.Size = new System.Drawing.Size(180, 73);
             this.btnSave1.TabIndex = 18;
@@ -279,19 +284,57 @@
             // btnSave
             // 
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(210, 473);
+            this.btnSave.Location = new System.Drawing.Point(210, 557);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(187, 73);
             this.btnSave.TabIndex = 19;
             this.btnSave.Text = "Cancel";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Location = new System.Drawing.Point(97, 241);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(300, 3);
+            this.panel6.TabIndex = 22;
+            // 
+            // txtProductBrand
+            // 
+            this.txtProductBrand.EditValue = "ProductBrand";
+            this.txtProductBrand.Location = new System.Drawing.Point(97, 201);
+            this.txtProductBrand.Name = "txtProductBrand";
+            this.txtProductBrand.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtProductBrand.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductBrand.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txtProductBrand.Properties.Appearance.Options.UseBackColor = true;
+            this.txtProductBrand.Properties.Appearance.Options.UseFont = true;
+            this.txtProductBrand.Properties.Appearance.Options.UseForeColor = true;
+            this.txtProductBrand.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtProductBrand.Size = new System.Drawing.Size(300, 34);
+            this.txtProductBrand.TabIndex = 21;
+            // 
+            // pictureEdit7
+            // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
+            this.pictureEdit7.Location = new System.Drawing.Point(23, 184);
+            this.pictureEdit7.Name = "pictureEdit7";
+            this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit7.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit7.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit7.Size = new System.Drawing.Size(58, 60);
+            this.pictureEdit7.TabIndex = 20;
+            // 
             // NewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(428, 609);
+            this.ClientSize = new System.Drawing.Size(428, 691);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.txtProductBrand);
+            this.Controls.Add(this.pictureEdit7);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnSave1);
             this.Controls.Add(this.textEdit5);
@@ -328,6 +371,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProductBrand.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,5 +398,8 @@
         private DevExpress.XtraEditors.TextEdit textEdit5;
         private DevExpress.XtraEditors.SimpleButton btnSave1;
         private DevExpress.XtraEditors.SimpleButton btnSave;
+        private System.Windows.Forms.Panel panel6;
+        private DevExpress.XtraEditors.TextEdit txtProductBrand;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit7;
     }
 }

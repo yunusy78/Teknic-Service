@@ -26,9 +26,9 @@
             <PropertyRef Name="CustomerID" />
           </Key>
           <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="CompanyName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="ContactName" Type="nvarchar" MaxLength="30" />
-          <Property Name="ContactTitle" Type="nvarchar" MaxLength="30" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" />
+          <Property Name="Title" Type="nvarchar" MaxLength="30" />
           <Property Name="Address" Type="nvarchar" MaxLength="60" />
           <Property Name="City" Type="nvarchar" MaxLength="15" />
           <Property Name="Region" Type="nvarchar" MaxLength="15" />
@@ -37,6 +37,7 @@
           <Property Name="Phone" Type="nvarchar" MaxLength="24" />
           <Property Name="Bank" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Departments">
           <Key>
@@ -139,6 +140,7 @@
           </Key>
           <Property Name="ProductID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="ProductBrand" Type="nvarchar" MaxLength="40" />
           <Property Name="CategoryID" Type="uniqueidentifier" />
           <Property Name="PurchasePrice" Type="money" />
           <Property Name="UnitPrice" Type="money" />
@@ -418,9 +420,9 @@
             <PropertyRef Name="CustomerID" />
           </Key>
           <Property Name="CustomerID" Type="Guid" Nullable="false" />
-          <Property Name="CompanyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ContactName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="ContactTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Region" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
@@ -429,6 +431,7 @@
           <Property Name="Phone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
           <Property Name="Bank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Customer" FromRole="Customers" ToRole="Invoice" />
           <NavigationProperty Name="ProductMovement" Relationship="Self.FK_ProductMovement_Customers" FromRole="Customers" ToRole="ProductMovement" />
           <NavigationProperty Name="TeknicService" Relationship="Self.FK_TeknicService_Customers" FromRole="Customers" ToRole="TeknicService" />
@@ -546,6 +549,7 @@
           </Key>
           <Property Name="ProductID" Type="Guid" Nullable="false" />
           <Property Name="ProductName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductBrand" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="CategoryID" Type="Guid" />
           <Property Name="PurchasePrice" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
@@ -836,9 +840,9 @@
             <EntityTypeMapping TypeName="DbTeknicServiceModel.Customers">
               <MappingFragment StoreEntitySet="Customers">
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
-                <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="Region" ColumnName="Region" />
@@ -847,6 +851,7 @@
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Bank" ColumnName="Bank" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -958,6 +963,7 @@
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductBrand" ColumnName="ProductBrand" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
                 <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />

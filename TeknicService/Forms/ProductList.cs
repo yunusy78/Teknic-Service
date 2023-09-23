@@ -23,7 +23,8 @@ namespace TeknicService.Forms
                          {
                              product.ProductID,
                              product.ProductName,
-                            CategoryName= product.Categories.Name,
+                             product.ProductBrand,
+                             CategoryName= product.Categories.Name,
                              product.UnitPrice,
                              product.PurchasePrice,
                              product.UnitsInStock,
@@ -71,6 +72,7 @@ namespace TeknicService.Forms
             Products product = new Products();
             product.ProductID = Guid.NewGuid();
             product.ProductName = txtProductName.Text;
+            product.ProductBrand= txtProductBrand.Text;
             product.PurchasePrice= decimal.Parse(txtPurchasePrice.Text);
             product.UnitPrice= decimal.Parse(txtUnitPrice.Text);
             product.UnitsInStock = short.Parse(txtUnitInStock.Text);
@@ -106,6 +108,7 @@ namespace TeknicService.Forms
         {
             textProductId.Text=gridView1.GetFocusedRowCellValue("ProductID").ToString();
             txtProductName.Text=gridView1.GetFocusedRowCellValue("ProductName").ToString();
+            txtProductBrand.Text = gridView1.GetFocusedRowCellValue("ProductBrand").ToString();
             txtPurchasePrice.Text = gridView1.GetFocusedRowCellValue("PurchasePrice").ToString();
             txtUnitPrice.Text=gridView1.GetFocusedRowCellValue("UnitPrice").ToString() ;
             txtUnitInStock.Text = gridView1.GetFocusedRowCellValue("UnitsInStock").ToString();
@@ -127,6 +130,7 @@ namespace TeknicService.Forms
             Guid id = Guid.Parse(textProductId.Text);
             var result = dbTeknicServiceEntities.Products.Find(id);
             result.ProductName = txtProductName.Text;
+            result.ProductBrand = txtProductBrand.Text;
             result.PurchasePrice= decimal.Parse( txtPurchasePrice.Text);
             result.UnitPrice = decimal.Parse( txtUnitPrice.Text);
             result.UnitsInStock = short.Parse(txtUnitInStock.Text);

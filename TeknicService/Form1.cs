@@ -33,7 +33,9 @@ namespace TeknicService
 
         private void barButtonItem15_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            Forms.CustomerCityStatistic fr = new Forms.CustomerCityStatistic();
+            fr.MdiParent = this;
+            fr.Show();
         }
 
         private void barButtonItem16_ItemClick(object sender, ItemClickEventArgs e)
@@ -73,6 +75,20 @@ namespace TeknicService
         private void btnProductChart_ItemClick(object sender, ItemClickEventArgs e)
         {
             Forms.ProductCharts fr = new Forms.ProductCharts();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void btnBrandChart_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.BrandForm fr = new Forms.BrandForm();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.CustomerForm fr = new Forms.CustomerForm();
             fr.MdiParent = this;
             fr.Show();
         }

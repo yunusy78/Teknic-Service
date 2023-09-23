@@ -24,6 +24,7 @@ namespace TeknicService
     
         public System.Guid ProductID { get; set; }
         public string ProductName { get; set; }
+        public string ProductBrand { get; set; }
         public Nullable<System.Guid> CategoryID { get; set; }
         public Nullable<decimal> PurchasePrice { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }

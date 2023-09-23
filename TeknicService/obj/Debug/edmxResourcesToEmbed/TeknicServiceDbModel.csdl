@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbTeknicServiceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Products_Categories" FromRole="Categories" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Guid" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ContactTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Region" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="Bank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Customer" FromRole="Customers" ToRole="Invoice" />
+    <NavigationProperty Name="ProductMovement" Relationship="Self.FK_ProductMovement_Customers" FromRole="Customers" ToRole="ProductMovement" />
+    <NavigationProperty Name="TeknicService" Relationship="Self.FK_TeknicService_Customers" FromRole="Customers" ToRole="TeknicService" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Guid" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PhotoPath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Employee" FromRole="Employees" ToRole="Invoice" />
+    <NavigationProperty Name="ProductMovement" Relationship="Self.FK_ProductMovement_Employees" FromRole="Employees" ToRole="ProductMovement" />
+    <NavigationProperty Name="TeknicService" Relationship="Self.FK_TeknicService_Employees" FromRole="Employees" ToRole="TeknicService" />
+  </EntityType>
+  <EntityType Name="Expense">
+    <Key>
+      <PropertyRef Name="ExpenseID" />
+    </Key>
+    <Property Name="ExpenseID" Type="Guid" Nullable="false" />
+    <Property Name="ExpenseDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ExpenseCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Payee" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiptNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FaultDetail">
+    <Key>
+      <PropertyRef Name="FaultDetailID" />
+    </Key>
+    <Property Name="FaultDetailID" Type="Guid" Nullable="false" />
+    <Property Name="ProcessID" Type="Guid" Nullable="false" />
+    <Property Name="Fault" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Detail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ListPrice" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="NetPrice" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="TeknicService" Relationship="Self.FK_FaultDetail_TeknicService" FromRole="FaultDetail" ToRole="TeknicService" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Guid" Nullable="false" />
+    <Property Name="CustomerID" Type="Guid" Nullable="false" />
+    <Property Name="EmployeeID" Type="Guid" Nullable="false" />
+    <Property Name="InvoiceDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DueTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+    <Property Name="SerialNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SequenceNumber" Type="Int32" Nullable="false" />
+    <Property Name="TaxOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_Invoice_Customer" FromRole="Invoice" ToRole="Customers" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Invoice_Employee" FromRole="Invoice" ToRole="Employees" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Invoice" FromRole="Invoice" ToRole="OrderDetails" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="Guid" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Content" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="Guid" Nullable="false" />
+    <Property Name="ProductId" Type="Guid" Nullable="false" />
+    <Property Name="InvoiceID" Type="Guid" Nullable="false" />
+    <Property Name="Quantity" Type="Int16" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_OrderDetails_Invoice" FromRole="OrderDetails" ToRole="Invoice" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_OrderDetails_Products" FromRole="OrderDetails" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="ProductMovement">
+    <Key>
+      <PropertyRef Name="MovementID" />
+    </Key>
+    <Property Name="MovementID" Type="Guid" Nullable="false" />
+    <Property Name="ProductID" Type="Guid" Nullable="false" />
+    <Property Name="CustomerID" Type="Guid" Nullable="false" />
+    <Property Name="EmployeeID" Type="Guid" Nullable="false" />
+    <Property Name="MovementType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MovementDate" Type="DateTime" Precision="3" />
+    <Property Name="Quantity" Type="Int16" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_ProductMovement_Customers" FromRole="ProductMovement" ToRole="Customers" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_ProductMovement_Employees" FromRole="ProductMovement" ToRole="Employees" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_ProductMovement_Products" FromRole="ProductMovement" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Guid" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductBrand" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryID" Type="Guid" />
+    <Property Name="PurchasePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UnitsInStock" Type="Int16" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Categories" Relationship="Self.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Products" FromRole="Products" ToRole="OrderDetails" />
+    <NavigationProperty Name="ProductMovement" Relationship="Self.FK_ProductMovement_Products" FromRole="Products" ToRole="ProductMovement" />
+    <NavigationProperty Name="TeknicService" Relationship="Self.FK_TeknicService_Products" FromRole="Products" ToRole="TeknicService" />
+  </EntityType>
+  <EntityType Name="TeknicService">
+    <Key>
+      <PropertyRef Name="ProcessID" />
+    </Key>
+    <Property Name="ProcessID" Type="Guid" Nullable="false" />
+    <Property Name="ProductID" Type="Guid" Nullable="false" />
+    <Property Name="CustomerID" Type="Guid" Nullable="false" />
+    <Property Name="EmployeeID" Type="Guid" Nullable="false" />
+    <Property Name="TheArrivalDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TheReleaseDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_TeknicService_Customers" FromRole="TeknicService" ToRole="Customers" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_TeknicService_Employees" FromRole="TeknicService" ToRole="Employees" />
+    <NavigationProperty Name="FaultDetail" Relationship="Self.FK_FaultDetail_TeknicService" FromRole="TeknicService" ToRole="FaultDetail" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_TeknicService_Products" FromRole="TeknicService" ToRole="Products" />
+    <NavigationProperty Name="Tracking" Relationship="Self.FK_Tracking_TeknicService" FromRole="TeknicService" ToRole="Tracking" />
+  </EntityType>
+  <EntityType Name="Tracking">
+    <Key>
+      <PropertyRef Name="TrackingID" />
+    </Key>
+    <Property Name="TrackingID" Type="Guid" Nullable="false" />
+    <Property Name="ProcessID" Type="Guid" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TeknicService" Relationship="Self.FK_Tracking_TeknicService" FromRole="Tracking" ToRole="TeknicService" />
+  </EntityType>
+  <Association Name="FK_Products_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Customer">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMovement_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="ProductMovement" Type="Self.ProductMovement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="ProductMovement">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeknicService_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="TeknicService" Type="Self.TeknicService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="TeknicService">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Employee">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMovement_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="ProductMovement" Type="Self.ProductMovement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="ProductMovement">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeknicService_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="TeknicService" Type="Self.TeknicService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="TeknicService">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FaultDetail_TeknicService">
+    <End Role="TeknicService" Type="Self.TeknicService" Multiplicity="1" />
+    <End Role="FaultDetail" Type="Self.FaultDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TeknicService">
+        <PropertyRef Name="ProcessID" />
+      </Principal>
+      <Dependent Role="FaultDetail">
+        <PropertyRef Name="ProcessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Invoice">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMovement_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ProductMovement" Type="Self.ProductMovement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductMovement">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeknicService_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="TeknicService" Type="Self.TeknicService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="TeknicService">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tracking_TeknicService">
+    <End Role="TeknicService" Type="Self.TeknicService" Multiplicity="1" />
+    <End Role="Tracking" Type="Self.Tracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TeknicService">
+        <PropertyRef Name="ProcessID" />
+      </Principal>
+      <Dependent Role="Tracking">
+        <PropertyRef Name="ProcessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbTeknicServiceEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admin" EntityType="Self.Admin" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" />
+    <EntitySet Name="Expense" EntityType="Self.Expense" />
+    <EntitySet Name="FaultDetail" EntityType="Self.FaultDetail" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" />
+    <EntitySet Name="ProductMovement" EntityType="Self.ProductMovement" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <EntitySet Name="TeknicService" EntityType="Self.TeknicService" />
+    <EntitySet Name="Tracking" EntityType="Self.Tracking" />
+    <AssociationSet Name="FK_Products_Categories" Association="Self.FK_Products_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Customer" Association="Self.FK_Invoice_Customer">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMovement_Customers" Association="Self.FK_ProductMovement_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="ProductMovement" EntitySet="ProductMovement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeknicService_Customers" Association="Self.FK_TeknicService_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="TeknicService" EntitySet="TeknicService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Employee" Association="Self.FK_Invoice_Employee">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMovement_Employees" Association="Self.FK_ProductMovement_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="ProductMovement" EntitySet="ProductMovement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeknicService_Employees" Association="Self.FK_TeknicService_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="TeknicService" EntitySet="TeknicService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FaultDetail_TeknicService" Association="Self.FK_FaultDetail_TeknicService">
+      <End Role="TeknicService" EntitySet="TeknicService" />
+      <End Role="FaultDetail" EntitySet="FaultDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Invoice" Association="Self.FK_OrderDetails_Invoice">
+      <End Role="Invoice" EntitySet="Invoice" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Products" Association="Self.FK_OrderDetails_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMovement_Products" Association="Self.FK_ProductMovement_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductMovement" EntitySet="ProductMovement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeknicService_Products" Association="Self.FK_TeknicService_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="TeknicService" EntitySet="TeknicService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tracking_TeknicService" Association="Self.FK_Tracking_TeknicService">
+      <End Role="TeknicService" EntitySet="TeknicService" />
+      <End Role="Tracking" EntitySet="Tracking" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

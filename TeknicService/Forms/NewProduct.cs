@@ -48,6 +48,7 @@ namespace TeknicService.Forms
             DbTeknicServiceEntities db = new DbTeknicServiceEntities();
             Products product = new Products();
             product.ProductName = txtProductName2.Text;
+            product.ProductBrand = txtProductBrand.Text;
             product.ProductID = Guid.NewGuid();
             product.ProductName = txtProductName2.Text;
             product.PurchasePrice = decimal.Parse(textPurchasePrice.Text);

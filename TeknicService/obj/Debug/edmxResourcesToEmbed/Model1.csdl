@@ -22,9 +22,9 @@
       <PropertyRef Name="CustomerID" />
     </Key>
     <Property Name="CustomerID" Type="Guid" Nullable="false" />
-    <Property Name="CompanyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ContactName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="ContactTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
     <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="Region" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
@@ -33,6 +33,7 @@
     <Property Name="Phone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
     <Property Name="Bank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
     <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Customer" FromRole="Customers" ToRole="Invoice" />
     <NavigationProperty Name="ProductMovement" Relationship="Self.FK_ProductMovement_Customers" FromRole="Customers" ToRole="ProductMovement" />
     <NavigationProperty Name="TeknicService" Relationship="Self.FK_TeknicService_Customers" FromRole="Customers" ToRole="TeknicService" />
@@ -150,6 +151,7 @@
     </Key>
     <Property Name="ProductID" Type="Guid" Nullable="false" />
     <Property Name="ProductName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductBrand" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
     <Property Name="CategoryID" Type="Guid" />
     <Property Name="PurchasePrice" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />

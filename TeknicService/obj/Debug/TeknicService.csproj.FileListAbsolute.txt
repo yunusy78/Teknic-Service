@@ -130,3 +130,8 @@ C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\Te
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\bin\Debug\DevExpress.Xpo.v23.1.xml
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.CustomerForm.resources
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.CustomerCityStatistic.resources
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.NewCustomer.resources
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.DepartmentForm.resources
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.NewDepartment.resources
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.EmployeeForm.resources
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.NewEmployee.resources

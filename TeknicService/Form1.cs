@@ -92,5 +92,38 @@ namespace TeknicService
             fr.MdiParent = this;
             fr.Show();
         }
+
+        private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+           
+            Forms.NewCustomer customer = new Forms.NewCustomer();
+            customer.Show();
+        }
+
+        private void barButtonItem25_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.DepartmentForm department = new Forms.DepartmentForm();
+            department.MdiParent = this;
+            department.Show();
+        }
+
+        private void barButtonItem26_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.NewDepartment department =new Forms.NewDepartment();
+            department.Show();
+        }
+
+        private void barButtonItem23_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.EmployeeForm employee = new Forms.EmployeeForm();
+            employee.MdiParent = this;
+            employee.Show();
+        }
+
+        private void barButtonItem24_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.NewEmployee newEmployee = new Forms.NewEmployee();
+            newEmployee.Show();
+        }
     }
 }

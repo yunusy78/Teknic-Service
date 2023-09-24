@@ -17,6 +17,15 @@
     <Property Name="Status" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Products" Relationship="Self.FK_Products_Categories" FromRole="Categories" ToRole="Products" />
   </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Guid" Nullable="false" />
+    <Property Name="CityName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="StateName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
   <EntityType Name="Customers">
     <Key>
       <PropertyRef Name="CustomerID" />
@@ -45,17 +54,20 @@
     <Property Name="DepartmentID" Type="Guid" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_OrderDetails_Deparments" FromRole="Departments" ToRole="Employees" />
   </EntityType>
   <EntityType Name="Employees">
     <Key>
       <PropertyRef Name="EmployeeID" />
     </Key>
     <Property Name="EmployeeID" Type="Guid" Nullable="false" />
+    <Property Name="DeparmentId" Type="Guid" Nullable="false" />
     <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="PhoneNumber" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
     <Property Name="PhotoPath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK_OrderDetails_Deparments" FromRole="Employees" ToRole="Departments" />
     <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Employee" FromRole="Employees" ToRole="Invoice" />
     <NavigationProperty Name="ProductMovement" Relationship="Self.FK_ProductMovement_Employees" FromRole="Employees" ToRole="ProductMovement" />
     <NavigationProperty Name="TeknicService" Relationship="Self.FK_TeknicService_Employees" FromRole="Employees" ToRole="TeknicService" />
@@ -238,6 +250,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_OrderDetails_Deparments">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="DeparmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Invoice_Employee">
     <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
     <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
@@ -349,6 +373,7 @@
   <EntityContainer Name="DbTeknicServiceEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Admin" EntityType="Self.Admin" />
     <EntitySet Name="Categories" EntityType="Self.Categories" />
+    <EntitySet Name="Cities" EntityType="Self.Cities" />
     <EntitySet Name="Customers" EntityType="Self.Customers" />
     <EntitySet Name="Departments" EntityType="Self.Departments" />
     <EntitySet Name="Employees" EntityType="Self.Employees" />
@@ -376,6 +401,10 @@
     <AssociationSet Name="FK_TeknicService_Customers" Association="Self.FK_TeknicService_Customers">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="TeknicService" EntitySet="TeknicService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Deparments" Association="Self.FK_OrderDetails_Deparments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Employees" EntitySet="Employees" />
     </AssociationSet>
     <AssociationSet Name="FK_Invoice_Employee" Association="Self.FK_Invoice_Employee">
       <End Role="Employees" EntitySet="Employees" />

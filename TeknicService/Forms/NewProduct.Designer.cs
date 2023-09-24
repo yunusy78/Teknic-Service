@@ -32,8 +32,6 @@
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.txtProductName2 = new DevExpress.XtraEditors.TextEdit();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtCategory = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textPurchasePrice = new DevExpress.XtraEditors.TextEdit();
@@ -51,9 +49,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtProductBrand = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.panel7 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductName2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPurchasePrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
@@ -65,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductBrand.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureEdit2
@@ -104,30 +104,6 @@
             this.panel1.Size = new System.Drawing.Size(300, 3);
             this.panel1.TabIndex = 3;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(97, 305);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 3);
-            this.panel2.TabIndex = 6;
-            // 
-            // txtCategory
-            // 
-            this.txtCategory.EditValue = "Category";
-            this.txtCategory.Location = new System.Drawing.Point(97, 270);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtCategory.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategory.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtCategory.Properties.Appearance.Options.UseBackColor = true;
-            this.txtCategory.Properties.Appearance.Options.UseFont = true;
-            this.txtCategory.Properties.Appearance.Options.UseForeColor = true;
-            this.txtCategory.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtCategory.Size = new System.Drawing.Size(300, 34);
-            this.txtCategory.TabIndex = 5;
-            // 
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
@@ -160,7 +136,7 @@
             this.textPurchasePrice.Properties.Appearance.Options.UseFont = true;
             this.textPurchasePrice.Properties.Appearance.Options.UseForeColor = true;
             this.textPurchasePrice.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textPurchasePrice.Size = new System.Drawing.Size(480, 34);
+            this.textPurchasePrice.Size = new System.Drawing.Size(300, 34);
             this.textPurchasePrice.TabIndex = 8;
             // 
             // pictureEdit3
@@ -326,12 +302,43 @@
             this.pictureEdit7.Size = new System.Drawing.Size(58, 60);
             this.pictureEdit7.TabIndex = 20;
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lookUpEdit1.Location = new System.Drawing.Point(97, 261);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lookUpEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.lookUpEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.DisplayMember = "Name";
+            this.lookUpEdit1.Properties.NullText = "Category";
+            this.lookUpEdit1.Properties.ValueMember = "CategoryId";
+            this.lookUpEdit1.Size = new System.Drawing.Size(300, 34);
+            this.lookUpEdit1.TabIndex = 23;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Location = new System.Drawing.Point(97, 309);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(300, 3);
+            this.panel7.TabIndex = 24;
+            // 
             // NewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(428, 691);
+            this.ClientSize = new System.Drawing.Size(456, 691);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.lookUpEdit1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.txtProductBrand);
             this.Controls.Add(this.pictureEdit7);
@@ -348,8 +355,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.textPurchasePrice);
             this.Controls.Add(this.pictureEdit3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtProductName2);
@@ -361,7 +366,6 @@
             this.Load += new System.EventHandler(this.NewProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductName2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPurchasePrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
@@ -373,6 +377,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductBrand.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,8 +387,6 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.TextEdit txtProductName2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private DevExpress.XtraEditors.TextEdit txtCategory;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraEditors.TextEdit textPurchasePrice;
@@ -401,5 +404,7 @@
         private System.Windows.Forms.Panel panel6;
         private DevExpress.XtraEditors.TextEdit txtProductBrand;
         private DevExpress.XtraEditors.PictureEdit pictureEdit7;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private System.Windows.Forms.Panel panel7;
     }
 }

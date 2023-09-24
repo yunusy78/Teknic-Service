@@ -42,7 +42,11 @@ namespace TeknicService.Forms
             /// var values = dbTeknicServiceEntities.Products.ToList();
             /// 
             ProductListMethod();
-            lookUpEdit1.Properties.DataSource = dbTeknicServiceEntities.Categories.ToList();
+            lookUpEdit1.Properties.DataSource = dbTeknicServiceEntities.Categories.Select(x => new
+            {
+                CategoryId = x.CategoryId,
+                Name = x.Name
+            }).ToList();
 
         }
             

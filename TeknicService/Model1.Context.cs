@@ -27,6 +27,7 @@ namespace TeknicService
     
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<Cities> Cities { get; set; }
         public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<Departments> Departments { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }

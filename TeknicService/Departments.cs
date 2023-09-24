@@ -14,8 +14,17 @@ namespace TeknicService
     
     public partial class Departments
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Departments()
+        {
+            this.Employees = new HashSet<Employees>();
+        }
+    
         public System.Guid DepartmentID { get; set; }
         public string Name { get; set; }
         public bool Status { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Employees> Employees { get; set; }
     }
 }

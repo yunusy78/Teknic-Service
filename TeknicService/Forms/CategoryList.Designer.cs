@@ -173,6 +173,7 @@ namespace TeknicService.Forms
             this.Controls.Add(this.gridControl1);
             this.Name = "CategoryList";
             this.Text = "CategoryList";
+            this.Load += new System.EventHandler(this.CategoryList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

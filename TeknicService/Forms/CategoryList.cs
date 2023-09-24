@@ -36,7 +36,7 @@ namespace TeknicService.Forms
         {
             //var values =db.Categories.ToList();
             //gridControl1.DataSource = values;
-            CategoryListMethod();
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -79,6 +79,11 @@ namespace TeknicService.Forms
             db.Categories.Remove(result);
             db.SaveChanges();
             MessageBox.Show("Category Deleted successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+        }
+
+        private void CategoryList_Load(object sender, EventArgs e)
+        {
+            CategoryListMethod();
         }
     }
 }

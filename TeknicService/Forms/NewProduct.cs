@@ -13,9 +13,16 @@ namespace TeknicService.Forms
 {
     public partial class NewProduct : Form
     {
+        DbTeknicServiceEntities db = new DbTeknicServiceEntities();
         public NewProduct()
         {
             InitializeComponent();
+
+            lookUpEdit1.Properties.DataSource = db.Categories.Select(x => new
+            {
+                CategoryId = x.CategoryId,
+                Name = x.Name
+            }).ToList();
         }
 
         private void pictureEdit2_EditValueChanged(object sender, EventArgs e)
@@ -45,7 +52,7 @@ namespace TeknicService.Forms
 
         private void btnSave1_Click(object sender, EventArgs e)
         {
-            DbTeknicServiceEntities db = new DbTeknicServiceEntities();
+           
             Products product = new Products();
             product.ProductName = txtProductName2.Text;
             product.ProductBrand = txtProductBrand.Text;
@@ -54,7 +61,7 @@ namespace TeknicService.Forms
             product.PurchasePrice = decimal.Parse(textPurchasePrice.Text);
             product.UnitPrice = decimal.Parse(txtUnitPrice.Text);
             product.UnitsInStock = short.Parse(txtStock.Text);
-            product.CategoryID = Guid.Parse(txtCategory.Text);
+            product.CategoryID = Guid.Parse(lookUpEdit1.EditValue.ToString());
             product.Status = true;
             db.Products.Add(product);
             db.SaveChanges();

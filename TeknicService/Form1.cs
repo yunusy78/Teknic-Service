@@ -125,5 +125,47 @@ namespace TeknicService
             Forms.NewEmployee newEmployee = new Forms.NewEmployee();
             newEmployee.Show();
         }
+
+        private void btnCalculator_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("Calc.exe");
+        }
+
+        private void btnCurrency_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.CurrencyForm currency = new Forms.CurrencyForm();
+            currency.MdiParent=this;
+            currency.Show();
+        }
+
+        private void barButtonItem31_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.NewsletterForm currency = new Forms.NewsletterForm();
+            currency.MdiParent = this;
+            currency.Show();
+        }
+
+        private void barButtonItem32_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("winword");
+        }
+
+        private void barButtonItem33_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("excel");
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.Tools.NotificationForm notification = new Forms.Tools.NotificationForm();
+            notification.MdiParent = this;
+            notification.Show();
+        }
+
+        private void barButtonItem28_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.Tools.NewNotification newNotification = new Forms.Tools.NewNotification();
+            newNotification.Show();
+        }
     }
 }

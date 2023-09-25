@@ -94,83 +94,107 @@
     <Compile Include="FaultDetail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\BrandForm.cs">
+    <Compile Include="Forms\Brand\BrandForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BrandForm.Designer.cs">
+    <Compile Include="Forms\Brand\BrandForm.Designer.cs">
       <DependentUpon>BrandForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CategoryList.cs">
+    <Compile Include="Forms\Category\CategoryList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CategoryList.Designer.cs">
+    <Compile Include="Forms\Category\CategoryList.Designer.cs">
       <DependentUpon>CategoryList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CustomerCityStatistic.cs">
+    <Compile Include="Forms\Tools\CurrencyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CustomerCityStatistic.Designer.cs">
+    <Compile Include="Forms\Tools\CurrencyForm.Designer.cs">
+      <DependentUpon>CurrencyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\CustomerCityStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\CustomerCityStatistic.Designer.cs">
       <DependentUpon>CustomerCityStatistic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CustomerForm.cs">
+    <Compile Include="Forms\Customer\CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CustomerForm.Designer.cs">
+    <Compile Include="Forms\Customer\CustomerForm.Designer.cs">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DepartmentForm.cs">
+    <Compile Include="Forms\Department\DepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DepartmentForm.Designer.cs">
+    <Compile Include="Forms\Department\DepartmentForm.Designer.cs">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeForm.cs">
+    <Compile Include="Forms\Employee\EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EmployeeForm.Designer.cs">
+    <Compile Include="Forms\Employee\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewCategory.cs">
+    <Compile Include="Forms\Category\NewCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewCategory.Designer.cs">
+    <Compile Include="Forms\Category\NewCategory.Designer.cs">
       <DependentUpon>NewCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewCustomer.cs">
+    <Compile Include="Forms\Customer\NewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewCustomer.Designer.cs">
+    <Compile Include="Forms\Customer\NewCustomer.Designer.cs">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewDepartment.cs">
+    <Compile Include="Forms\Department\NewDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewDepartment.Designer.cs">
+    <Compile Include="Forms\Department\NewDepartment.Designer.cs">
       <DependentUpon>NewDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewEmployee.cs">
+    <Compile Include="Forms\Employee\NewEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewEmployee.Designer.cs">
+    <Compile Include="Forms\Employee\NewEmployee.Designer.cs">
       <DependentUpon>NewEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewProduct.cs">
+    <Compile Include="Forms\Product\NewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewProduct.Designer.cs">
+    <Compile Include="Forms\Product\NewProduct.Designer.cs">
       <DependentUpon>NewProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductCharts.cs">
+    <Compile Include="Forms\Tools\NewNotification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductCharts.Designer.cs">
+    <Compile Include="Forms\Tools\NewNotification.Designer.cs">
+      <DependentUpon>NewNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tools\NewsletterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\NewsletterForm.Designer.cs">
+      <DependentUpon>NewsletterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Product\ProductCharts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Product\ProductCharts.Designer.cs">
       <DependentUpon>ProductCharts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductList.cs">
+    <Compile Include="Forms\Product\ProductList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductList.Designer.cs">
+    <Compile Include="Forms\Product\ProductList.Designer.cs">
       <DependentUpon>ProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tools\NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Invoice.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -216,44 +240,56 @@
     <Compile Include="Tracking.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\BrandForm.resx">
+    <EmbeddedResource Include="Forms\Brand\BrandForm.resx">
       <DependentUpon>BrandForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CategoryList.resx">
+    <EmbeddedResource Include="Forms\Category\CategoryList.resx">
       <DependentUpon>CategoryList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomerCityStatistic.resx">
+    <EmbeddedResource Include="Forms\Tools\CurrencyForm.resx">
+      <DependentUpon>CurrencyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\CustomerCityStatistic.resx">
       <DependentUpon>CustomerCityStatistic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomerForm.resx">
+    <EmbeddedResource Include="Forms\Customer\CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DepartmentForm.resx">
+    <EmbeddedResource Include="Forms\Department\DepartmentForm.resx">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeForm.resx">
+    <EmbeddedResource Include="Forms\Employee\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewCategory.resx">
+    <EmbeddedResource Include="Forms\Category\NewCategory.resx">
       <DependentUpon>NewCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewCustomer.resx">
+    <EmbeddedResource Include="Forms\Customer\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewDepartment.resx">
+    <EmbeddedResource Include="Forms\Department\NewDepartment.resx">
       <DependentUpon>NewDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewEmployee.resx">
+    <EmbeddedResource Include="Forms\Employee\NewEmployee.resx">
       <DependentUpon>NewEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewProduct.resx">
+    <EmbeddedResource Include="Forms\Product\NewProduct.resx">
       <DependentUpon>NewProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductCharts.resx">
+    <EmbeddedResource Include="Forms\Tools\NewNotification.resx">
+      <DependentUpon>NewNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\NewsletterForm.resx">
+      <DependentUpon>NewsletterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Product\ProductCharts.resx">
       <DependentUpon>ProductCharts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductList.resx">
+    <EmbeddedResource Include="Forms\Product\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

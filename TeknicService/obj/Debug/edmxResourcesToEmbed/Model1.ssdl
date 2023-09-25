@@ -111,8 +111,8 @@
       <PropertyRef Name="NotificationID" />
     </Key>
     <Property Name="NotificationID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Content" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Content" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Status" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="OrderDetails">

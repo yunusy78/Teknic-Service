@@ -59,10 +59,21 @@ This project is licensed under the [License Type] license. For more information,
 
 ## Images
 
-![Project Image](image1.png)
+![Project Image](TeknicService/ProjectImage/1.png)
 
-![Project Image](image2.png)
+![Project Image](TeknicService/ProjectImage/2.png)
+![Project Image](TeknicService/ProjectImage/3.png)
 
-![Project Image](image3.png)
+![Project Image](TeknicService/ProjectImage/4.png)
 
-![Project Image](image4.png)
+![Project Image](TeknicService/ProjectImage/5.png)
+![Project Image](TeknicService/ProjectImage/6.png)
+![Project Image](TeknicService/ProjectImage/7.png)
+
+![Project Image](TeknicService/ProjectImage/8.png)
+
+
+
+
+
+

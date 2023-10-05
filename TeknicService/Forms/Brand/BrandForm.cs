@@ -73,5 +73,10 @@ namespace TeknicService.Forms
         {
 
         }
+
+        private void panelControl2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -43,5 +43,10 @@ namespace TeknicService.Forms
         {
             Close();
         }
+
+        private void NewEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

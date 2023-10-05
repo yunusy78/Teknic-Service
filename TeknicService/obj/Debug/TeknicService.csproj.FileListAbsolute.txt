@@ -139,3 +139,6 @@ C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\Te
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.NewsletterForm.resources
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.Tools.NotificationForm.resources
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.Tools.NewNotification.resources
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.Fault.FaultForm.resources
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.Order.NewOrder.resources
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Teknic-Service\TeknicService\obj\Debug\TeknicService.Forms.Order.OrderForm.resources

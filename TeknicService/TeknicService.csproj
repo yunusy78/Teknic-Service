@@ -106,6 +106,24 @@
     <Compile Include="Forms\Category\CategoryList.Designer.cs">
       <DependentUpon>CategoryList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Fault\FaultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Fault\FaultForm.Designer.cs">
+      <DependentUpon>FaultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Order\NewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Order\NewOrder.Designer.cs">
+      <DependentUpon>NewOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Order\OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Order\OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tools\CurrencyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +263,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Category\CategoryList.resx">
       <DependentUpon>CategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Fault\FaultForm.resx">
+      <DependentUpon>FaultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Order\NewOrder.resx">
+      <DependentUpon>NewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Order\OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\CurrencyForm.resx">
       <DependentUpon>CurrencyForm.cs</DependentUpon>

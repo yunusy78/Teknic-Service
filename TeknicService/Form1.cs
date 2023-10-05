@@ -167,5 +167,25 @@ namespace TeknicService
             Forms.Tools.NewNotification newNotification = new Forms.Tools.NewNotification();
             newNotification.Show();
         }
+
+        private void btnFaultProductList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.Fault.FaultForm faultForm = new Forms.Fault.FaultForm();
+            faultForm.MdiParent = this;
+            faultForm.Show();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.Order.OrderForm orderForm = new Forms.Order.OrderForm();
+            orderForm.MdiParent = this;
+            orderForm.Show();
+        }
+
+        private void barButtonItem18_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.Order.NewOrder newOrder = new Forms.Order.NewOrder();
+            newOrder.Show();
+        }
     }
 }

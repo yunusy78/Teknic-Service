@@ -435,6 +435,7 @@
             this.Controls.Add(this.pictureEdit2);
             this.Name = "NewEmployee";
             this.Text = "NewEmployee";
+            this.Load += new System.EventHandler(this.NewEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).EndInit();
